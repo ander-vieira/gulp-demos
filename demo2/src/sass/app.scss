@@ -1,0 +1,68 @@
+@import 'variables';
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $color-primary;
+
+  &:hover, &:active, &:focus {
+    color: $color-primary-hover;
+  }
+}
+
+.header {
+  color: white;
+  background-color: $color-primary;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 4px solid $color-primary-hover;
+  font-size: 30px;
+
+  .header-container {
+    max-width: $page-width;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+
+    @media(max-width: $page-width) {
+      padding: 0 $page-padding;
+    }
+  }
+}
+
+.width-container {
+  max-width: $page-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media(max-width: $page-width) {
+    padding: 0 $page-padding;
+  }
+}
+
+.button {
+  padding: 5px;
+  border-radius: $btn-border-radius;
+  background-color: $color-primary;
+  color: white;
+
+  &:active, &:hover, &:focus {
+    background-color: $color-primary-hover;
+    color: white;
+  }
+}
+
+.notification {
+  position: fixed;
+  background-color: $color-primary;
+  color: white;
+  bottom: 20px;
+  right: 20px;
+  padding: 5px;
+  border-radius: $btn-border-radius;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
+}
