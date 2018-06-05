@@ -1,0 +1,21 @@
+{
+  "html": {
+    "sourceDir": "src/",
+    "destDir": "public/",
+    "file": "index.html"
+  },
+  "sass": {
+    "sourceDir": "src/sass/",
+    "destDir": "public/css/",
+    "files": [
+      "app.scss"
+    ]
+  },
+  "js": {
+    "sourceDir": "src/js/",
+    "destDir": "public/js/",
+    "files": [
+      "**/*.js"
+    ]
+  }
+}
