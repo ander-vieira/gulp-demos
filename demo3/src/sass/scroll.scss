@@ -2,10 +2,13 @@ $scroll-height: 50px;
 $scroll-padding: 10px;
 $elements-shown: 4;
 
+$scroll-full-height: $scroll-height+2*$scroll-padding;
+
 .scroll-container {
   border: 5px solid $color-primary;
-  width: $elements-shown*($scroll-height+2*$scroll-padding);
-  height: $scroll-height+2*$scroll-padding;
+  border-radius: 50%;
+  width: $elements-shown*$scroll-full-height;
+  height: $elements-shown*$scroll-full-height;
   overflow-x: hidden;
   position: relative;
 
@@ -13,7 +16,8 @@ $elements-shown: 4;
     display: flex;
     align-items: center;
     position: absolute;
-    margin-left: (($elements-shown - 1)/2)*($scroll-height+2*$scroll-padding);
+    height: 100%;
+    margin-left: (($elements-shown - 1)/2)*$scroll-full-height;
 
     .scroll-element {
       background-color: $color-secondary;
@@ -21,6 +25,7 @@ $elements-shown: 4;
       font-weight: bold;
       width: $scroll-height;
       height: $scroll-height;
+      border-radius: 50%;
       text-align: center;
       line-height: $scroll-height;
       margin: $scroll-padding;
