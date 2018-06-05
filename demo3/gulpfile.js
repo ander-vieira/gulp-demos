@@ -28,8 +28,8 @@ gulp.task('sass', function() {
 gulp.task('js', function() {
   gulp.src('src/js/**/*.js')
     .pipe(sourcemaps.init())
-    .pipe(uglify())
     .pipe(concat('app.js'))
+    .pipe(uglify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('public/js/'));
 });
