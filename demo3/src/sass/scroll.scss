@@ -1,0 +1,34 @@
+$scroll-height: 50px;
+$scroll-padding: 10px;
+$elements-shown: 5;
+
+.scroll-container {
+  border: 5px solid $color-primary;
+  width: $elements-shown*($scroll-height+2*$scroll-padding);
+  height: $scroll-height+2*$scroll-padding;
+  overflow-x: hidden;
+  position: relative;
+
+  .scroll {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-left: 2*($scroll-height+2*$scroll-padding);
+
+    .scroll-element {
+      background-color: $color-secondary;
+      color: white;
+      font-weight: bold;
+      width: $scroll-height;
+      height: $scroll-height;
+      text-align: center;
+      line-height: $scroll-height;
+      margin: $scroll-padding;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-secondary-hover;
+      }
+    }
+  }
+}
