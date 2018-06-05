@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.scroll .scroll-element').forEach(function(el) {
+  Array.prototype.forEach.call(document.querySelectorAll('.scroll .scroll-element'), function(el) {
     el.addEventListener('click', function() {
       var parent = document.querySelector('.scroll');
 

@@ -1,6 +1,6 @@
 window.list = [];
 
-document.querySelectorAll('.list-buttons a:not(.saveButton)').forEach(function(el) {
+Array.prototype.forEach.call(document.querySelectorAll('.list-buttons a:not(.saveButton)'), function(el) {
   el.addEventListener('click', function(event) {
     var list = document.querySelector('.list');
 
@@ -21,10 +21,15 @@ document.querySelector('.list-buttons a.saveButton').addEventListener('click', f
 });
 
 function saveList() {
-  var url = URL.createObjectURL(new Blob([JSON.stringify(window.list)], {type: 'application/json'}));
-  var a = document.createElement('a');
-  a.href = url;
-  a.download = 'list.json';
+  var blob = new Blob([JSON.stringify(window.list)], {type: 'application/json'});
+  if (navigator.appVersion.toString().indexOf('.NET') > 0) {
+        window.navigator.msSaveBlob(blob, 'list.json');
+  } else {
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'list.json';
 
-  a.click();
+    a.click();
+  }
 }

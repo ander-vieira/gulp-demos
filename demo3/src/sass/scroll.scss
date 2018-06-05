@@ -38,6 +38,7 @@ $scroll-full-height: $scroll-height+2*$scroll-padding;
       line-height: $scroll-height;
       margin: $scroll-padding;
       cursor: pointer;
+      flex: 0 0 auto;
 
       &:hover {
         background-color: $color-secondary-hover;
