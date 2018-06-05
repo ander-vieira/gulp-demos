@@ -13,6 +13,14 @@
       &:hover, &:focus, &:active {
         background-color: $color-primary-hover;
       }
+
+      &.saveButton {
+        background-color: $color-secondary;
+
+        &:hover, &:focus, &:active {
+          background-color: $color-secondary-hover;
+        }
+      }
     }
   }
 
