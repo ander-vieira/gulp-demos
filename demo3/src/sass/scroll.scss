@@ -8,16 +8,24 @@ $scroll-full-height: $scroll-height+2*$scroll-padding;
   border: 5px solid $color-primary;
   border-radius: 50%;
   width: $elements-shown*$scroll-full-height;
-  height: $elements-shown*$scroll-full-height;
+  max-width: 100%;
   overflow-x: hidden;
   position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
 
   .scroll {
     display: flex;
     align-items: center;
     position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
-    margin-left: (($elements-shown - 1)/2)*$scroll-full-height;
+    margin-left: calc(50% - #{$scroll-full-height/2});
 
     .scroll-element {
       background-color: $color-secondary;
