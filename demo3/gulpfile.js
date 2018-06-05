@@ -33,3 +33,9 @@ gulp.task('js', function() {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('public/js/'));
 });
+
+gulp.task('watch', function() {
+  gulp.watch('src/index.html', ['html']);
+  gulp.watch('src/sass/**', ['sass']);
+  gulp.watch('src/js/**', ['js']);
+});

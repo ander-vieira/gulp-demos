@@ -1,6 +1,6 @@
 $scroll-height: 50px;
 $scroll-padding: 10px;
-$elements-shown: 5;
+$elements-shown: 4;
 
 .scroll-container {
   border: 5px solid $color-primary;
@@ -13,7 +13,7 @@ $elements-shown: 5;
     display: flex;
     align-items: center;
     position: absolute;
-    margin-left: 2*($scroll-height+2*$scroll-padding);
+    margin-left: (($elements-shown - 1)/2)*($scroll-height+2*$scroll-padding);
 
     .scroll-element {
       background-color: $color-secondary;
