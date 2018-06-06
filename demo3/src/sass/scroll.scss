@@ -1,16 +1,18 @@
 $scroll-height: 50px;
 $scroll-padding: 10px;
+$scroll-border: 5px;
 $elements-shown: 4;
 
 $scroll-full-height: $scroll-height+2*$scroll-padding;
 
 .scroll-container {
-  border: 5px solid $color-primary;
+  border: $scroll-border solid $color-primary;
   border-radius: 50%;
-  width: $elements-shown*$scroll-full-height;
+  width: $elements-shown*$scroll-full-height+2*$scroll-border;
   max-width: 100%;
   overflow-x: hidden;
   position: relative;
+  box-sizing: border-box;
 
   &:before {
     content: '';
